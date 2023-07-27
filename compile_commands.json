@@ -1,0 +1,56 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-ggdb",
+      "-Iinclude",
+      "-o",
+      "bin/profile",
+      "src/main.cc"
+    ],
+    "directory": "/home/ethan/dev/school/nifties/nifty-dna",
+    "file": "/home/ethan/dev/school/nifties/nifty-dna/src/main.cc",
+    "output": "/home/ethan/dev/school/nifties/nifty-dna/bin/profile"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-ggdb",
+      "-Iinclude",
+      "-o",
+      "bin/profile",
+      "src/db.cc"
+    ],
+    "directory": "/home/ethan/dev/school/nifties/nifty-dna",
+    "file": "/home/ethan/dev/school/nifties/nifty-dna/src/db.cc",
+    "output": "/home/ethan/dev/school/nifties/nifty-dna/bin/profile"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-ggdb",
+      "-Iinclude",
+      "-o",
+      "bin/profile",
+      "src/utils.cc"
+    ],
+    "directory": "/home/ethan/dev/school/nifties/nifty-dna",
+    "file": "/home/ethan/dev/school/nifties/nifty-dna/src/utils.cc",
+    "output": "/home/ethan/dev/school/nifties/nifty-dna/bin/profile"
+  }
+]
