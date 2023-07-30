@@ -82,33 +82,17 @@ auto readDb(std::ifstream &fin) -> Db
 
 auto findMaxConsecutiveRepeats(std::string_view sequence, std::string_view str) -> size_t
 {
-    size_t maxCount = 0;
-    size_t count = 0;
-
-    size_t seqIdx = 0;
-    size_t newIdx = 0;
-    while (true)
-    {
-        newIdx = sequence.find(str, seqIdx + 1);
-        if (newIdx == std::string_view::npos)
+    const auto consecutiveRepeats = [&](size_t i) -> size_t {
+        const auto div = str.size();
+        for (size_t j = 0; j < sequence.size() - i; ++j)
         {
-            if (newIdx == seqIdx + 4)
-                ++count;
-
-            maxCount = std::max(maxCount, count);
-            break;
+            if (sequence[i + j] != str[j % div])
+                return j / div;
         }
 
-        if (newIdx == seqIdx + 4)
-            ++count;
-        else
-        {
-            maxCount = std::max(maxCount, count);
-            count = 1;
-        }
+        return (sequence.size() - i) / div;
+    };
 
-        seqIdx = newIdx;
-    }
-
-    return maxCount;
+    namespace rv = std::ranges::views;
+    return std::ranges::max(rv::iota(0ul, sequence.size()) | rv::transform(consecutiveRepeats));
 }
